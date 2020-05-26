@@ -1,8 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import marked from 'marked'
+import logo from './logo.svg'
+import './App.css'
+const readmePath = require('./Readme.md')
 
 function App() {
+  const [markdown, setMarkdown] = useState({})
+
+  useEffect(() => {
+    fetch(readmePath)
+      .then((response) => {
+        return response.text()
+      })
+      .then((text) => {
+        setMarkdown(marked(text))
+      })
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,13 +28,15 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
+        <section>
+          <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
+        </section>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

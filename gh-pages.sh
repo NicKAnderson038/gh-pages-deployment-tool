@@ -5,7 +5,7 @@ publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d"."
 echo "📦 Building application"
 if [[ "$STR" == *"$SUB"* ]]
 then
-    echo "🏠 set homepage"
+    echo "🏠 set homepage: /$publicPath/"
     echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
 else

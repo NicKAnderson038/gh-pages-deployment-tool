@@ -45,7 +45,7 @@ git commit -m "cleaned cache"
 git push
 
 url="https://nickanderson038.github.io/gh-pages-deployment-tool/"
-// echo -e '\e]8;;https://nickanderson038.github.io/gh-pages-deployment-tool\aGithub Pages link\e]8;;\a'
+# echo -e '\e]8;;https://nickanderson038.github.io/gh-pages-deployment-tool\aGithub Pages link\e]8;;\a'
 echo "<a href='$url'/>"$url"/</a>"
 
 exit 0

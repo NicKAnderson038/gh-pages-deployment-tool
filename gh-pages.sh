@@ -7,11 +7,9 @@ echo "📰 Github pages path: /$publicPath/"
 echo "📦 Building application"
 if [[ "$STR" == *"$SUB"* ]]
 then
-    echo "REACT REACT REACT REACT"
     echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
 else
-    echo "VUE VUE VUE VUE VUE"
     vue-cli-service build
 fi
 echo "🏁 Build complete"
@@ -37,7 +35,6 @@ then
     rm -r -v build
     git rm -r --cached build
 else
-    echo "Remove dist folder & clean cache"
     rm -r -v dist
     git rm -r --cached dist
 fi

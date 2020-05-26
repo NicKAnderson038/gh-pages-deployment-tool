@@ -3,13 +3,12 @@ export PUBLIC_PATH="/$publicPath/"
 echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
-vue-cli-service build
 if [ -d "./dist" ] 
 then
-    echo "TRUE TRUE TRUE TRUE"
+    echo "VUE VUE VUE VUE VUE"
     vue-cli-service build
 else
-    echo "FALSE FALSE FALSE FALSE"
+    echo "REACT REACT REACT REACT"
     react-scripts build
 fi
 echo "🏁 Build complete"

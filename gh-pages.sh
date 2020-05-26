@@ -9,6 +9,7 @@ then
     echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
     echo "`jq 'del(.homepage)' package.json`" > package.json
+    echo "🔙 package.json restored"
 else
     echo "🛣️ set public path: /$publicPath/"
     export PUBLIC_PATH="/$publicPath/"

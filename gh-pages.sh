@@ -4,6 +4,12 @@ echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
 vue-cli-service build
+if [ -d "./dist" ] 
+then
+    vue-cli-service build
+else
+    react-scripts build
+fi
 echo "🏁 Build complete"
 
 export PUBLIC_PATH='/'

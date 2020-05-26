@@ -44,9 +44,11 @@ git add .
 git commit -m "cleaned cache"
 git push
 
+test="$(git config --get remote.origin.url)"
 url="https://nickanderson038.github.io/gh-pages-deployment-tool/"
-# echo -e '\e]8;;https://nickanderson038.github.io/gh-pages-deployment-tool\aGithub Pages link\e]8;;\a'
-printf '\e]8;;http://example.com\e\\This is a link\e]8;;\e\\\n'
 
+printf "\n⛅'\e]8;;$url\e\\Github pages url: $publicPath\e]8;;\e\\\'\n"
+echo ""
+echo "$test"
 exit 0
 read

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import logo from './logo.svg'
+import react from './logo.svg'
+import vue from './vue.svg'
 import './App.css'
 // const readmePath = require('./README.md')
 
@@ -75,14 +76,21 @@ read
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" width="100" />
-        <p>Bash script information</p>
+        <div class="image-flex">
+        <img src={react} className="App-logo" alt="logo" width="100" />
+        <img src={vue} className="App-logo" alt="logo" width="80" />
+        </div>
+        <div class="image-flex">
+        <h3>React</h3>
+        <span style={{width: '36px'}} ></span>
+        <h3>Vue</h3>
+        </div>
         <a
           className="App-link"
           href="https://github.com/NicKAnderson038/gh-pages-deployment-tool/tree/master"
           target="_blank"
           rel="noopener noreferrer">
-          Source code
+          Bash script source code
         </a>
         <br></br>
         {/* <section>

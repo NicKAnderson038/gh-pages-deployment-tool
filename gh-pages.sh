@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 STR="$(echo `jq '.scripts.build' package.json`)"
 SUB='react'
 publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d".")"

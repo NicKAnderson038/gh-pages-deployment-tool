@@ -44,5 +44,7 @@ git add .
 git commit -m "cleaned cache"
 git push
 
+echo -e '\e]8;;https://nickanderson038.github.io/gh-pages-deployment-tool\aGithub Pages link\e]8;;\a'
+
 exit 0
 read

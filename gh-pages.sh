@@ -4,7 +4,7 @@ echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
 vue-cli-service build
-if [ -d "./dist" ] 
+if [ -d "dist" ] 
 then
     vue-cli-service build
 else
@@ -17,7 +17,7 @@ echo "🔙 restore path"
 
 echo "🚀 Begin deployment"
 git push origin --delete gh-pages
-if [ -d "./dist" ] 
+if [ -d "dist" ] 
 then
     echo "Git Add Vue application"
     git add -f dist && git commit -m "Initial dist subtree commit" --no-verify
@@ -28,7 +28,7 @@ fi
 git subtree push --prefix dist origin gh-pages
 
 echo "🛁 Clean up process"
-if [ -d "./dist" ] 
+if [ -d "dist" ] 
 then
     echo "Remove dist folder & clean cache"
     rm -r -v dist

@@ -75,7 +75,8 @@ read
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" width="100"/>
+        <img src={logo} className="App-logo" alt="logo" width="100" />
+        <p>Bash script information</p>
         <a
           className="App-link"
           href="https://github.com/NicKAnderson038/gh-pages-deployment-tool/tree/master"
@@ -84,9 +85,9 @@ read
           Source code
         </a>
         <br></br>
-        <section>
-      <article dangerouslySetInnerHTML={{__html: bashScript}}></article>
-    </section>
+        {/* <section>
+          <article dangerouslySetInnerHTML={{ __html: bashScript }}></article>
+        </section> */}
       </header>
     </div>
   )

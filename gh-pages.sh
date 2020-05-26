@@ -30,9 +30,9 @@ fi
 echo "🛁 Clean up process"
 if [[ "$STR" == *"$SUB"* ]]
 then
-    # echo "`jq 'del(.homepage)' package.json`" > package.json
     rm -r -v build
     git rm -r --cached build
+    echo "`jq 'del(.homepage)' package.json`" > package.json
 else
     rm -r -v dist
     git rm -r --cached dist

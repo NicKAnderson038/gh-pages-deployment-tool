@@ -1,4 +1,4 @@
-🏠 set homepage: {
+{
   "name": "gh-pages-deployment-tool",
   "version": "0.1.0",
   "private": true,

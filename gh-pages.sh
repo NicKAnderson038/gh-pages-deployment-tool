@@ -1,6 +1,8 @@
 STR="$(echo `jq '.scripts.build' package.json`)"
 SUB='react'
+account="$(git config --get remote.origin.url | sed 's:.*//github.com/::' | cut -f1 -d"/")"
 publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d".")"
+url="https://""$account"".github.io/""$publicPath""/"
 
 echo "📦 Building application"
 if [[ "$STR" == *"$SUB"* ]]
@@ -44,12 +46,8 @@ git add .
 git commit -m "cleaned cache"
 git push
 
-test="$(git config --get remote.origin.url)"
-url="https://nickanderson038.github.io/gh-pages-deployment-tool/"
-
 printf "\n⛅'\e]8;;$url\e\\Github pages url: $publicPath\e]8;;\e\\\'\n"
 echo ""
-echo "link      https://nickanderson038.github.io/gh-pages-deployment-tool/"
-echo "Origins   $test"
+
 exit 0
 read

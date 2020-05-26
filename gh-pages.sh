@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 STR="$(echo `jq '.scripts.build' package.json`)"
 SUB='react'

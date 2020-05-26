@@ -8,12 +8,13 @@ then
     echo "🏠 set homepage: /$publicPath/"
     echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
+    echo "`jq 'del(.homepage)' package.json`" > package.json
 else
     echo "🛣️ set public path: /$publicPath/"
     export PUBLIC_PATH="/$publicPath/"
     vue-cli-service build
     export PUBLIC_PATH='/'
-    echo "🔙 restore path"
+    echo "🔙 public path restored"
 fi
 echo "🏁 Build complete"
 
@@ -33,7 +34,6 @@ if [[ "$STR" == *"$SUB"* ]]
 then
     rm -r -v build
     git rm -r --cached build
-    echo "`jq 'del(.homepage)' package.json`" > package.json
 else
     rm -r -v dist
     git rm -r --cached dist

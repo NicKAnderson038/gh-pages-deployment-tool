@@ -46,7 +46,7 @@ git push
 
 url="https://nickanderson038.github.io/gh-pages-deployment-tool/"
 # echo -e '\e]8;;https://nickanderson038.github.io/gh-pages-deployment-tool\aGithub Pages link\e]8;;\a'
-echo "<a href='$url'/>"$url"/</a>"
+printf '\e]8;;http://example.com\e\\This is a link\e]8;;\e\\\n'
 
 exit 0
 read

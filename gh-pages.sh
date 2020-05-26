@@ -1,5 +1,5 @@
 publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d".")"
-export PUBLIC_PATH="/$publicPath/"
+export PUBLIC_URL="/$publicPath/"
 echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
@@ -13,7 +13,7 @@ else
 fi
 echo "🏁 Build complete"
 
-export PUBLIC_PATH='/'
+export PUBLIC_URL='/'
 echo "🔙 restore path"
 
 echo "🚀 Begin deployment"

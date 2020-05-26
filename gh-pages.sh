@@ -9,6 +9,7 @@ then
     vue-cli-service build
 else
     echo "REACT REACT REACT REACT"
+    echo "`jq '.homepage="'$publicPath'"' package.json`" > package.json
     react-scripts build
 fi
 echo "🏁 Build complete"
@@ -46,3 +47,6 @@ git push
 
 exit 0
 read
+
+# HOMEPAGE="CAT"
+# echo "`jq '.homepage="'$HOMEPAGE'"' package.json`" > package.json

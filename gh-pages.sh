@@ -23,11 +23,12 @@ if [ -d "./dist" ]
 then
     echo "Git Add Vue application"
     git add -f dist && git commit -m "Initial dist subtree commit" --no-verify
+    git subtree push --prefix dist origin gh-pages
 else
     echo "Git Add React application"
-    git add -f build && git commit -m "Initial dist subtree commit" --no-verify
+    git add -f build && git commit -m "Initial build subtree commit" --no-verify
+    git subtree push --prefix build origin gh-pages
 fi
-git subtree push --prefix dist origin gh-pages
 
 echo "🛁 Clean up process"
 if [ -d "./dist" ] 

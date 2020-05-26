@@ -49,7 +49,7 @@ url="https://nickanderson038.github.io/gh-pages-deployment-tool/"
 
 printf "\n⛅'\e]8;;$url\e\\Github pages url: $publicPath\e]8;;\e\\\'\n"
 echo ""
-echo "https://nickanderson038.github.io/gh-pages-deployment-tool/"
-echo "$test"
+echo "link      https://nickanderson038.github.io/gh-pages-deployment-tool/"
+echo "Origins   $test"
 exit 0
 read

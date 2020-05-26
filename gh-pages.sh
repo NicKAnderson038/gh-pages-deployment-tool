@@ -38,6 +38,7 @@ then
     git rm -r --cached dist
 else
     echo "Remove build folder & clean cache"
+    jq 'del(.homepage)' package.json
     rm -r -v build
     git rm -r --cached build
 fi

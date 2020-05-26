@@ -94,3 +94,7 @@ echo ""
 exit 0
 read
 ```
+
+#
+
+#### Application may take awhile to deploy.

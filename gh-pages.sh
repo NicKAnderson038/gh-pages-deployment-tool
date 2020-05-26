@@ -1,21 +1,20 @@
 STR="$(echo `jq '.scripts.build' package.json`)"
 SUB='react'
 publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d".")"
-export PUBLIC_PATH="/$publicPath/"
-echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
 if [[ "$STR" == *"$SUB"* ]]
 then
-    echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
+    echo "🏠 set homepage: `jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
 else
+    echo "🛣️ set public path: /$publicPath/"
+    export PUBLIC_PATH="/$publicPath/"
     vue-cli-service build
+    export PUBLIC_PATH='/'
+    echo "🔙 restore path"
 fi
 echo "🏁 Build complete"
-
-export PUBLIC_PATH='/'
-echo "🔙 restore path"
 
 echo "🚀 Begin deployment"
 git push origin --delete gh-pages

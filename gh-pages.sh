@@ -1,5 +1,5 @@
 publicPath="$(git config --get remote.origin.url | sed 's:.*/::' | cut -f1 -d".")"
-export PUBLIC_URL="/$publicPath/"
+export PUBLIC_PATH="/$publicPath/"
 echo "📰 Github pages path: /$publicPath/"
 
 echo "📦 Building application"
@@ -9,12 +9,12 @@ then
     vue-cli-service build
 else
     echo "REACT REACT REACT REACT"
-    echo "`jq '.homepage="'$publicPath'"' package.json`" > package.json
+    echo "`jq '.homepage="'/$publicPath/'"' package.json`" > package.json
     react-scripts build
 fi
 echo "🏁 Build complete"
 
-export PUBLIC_URL='/'
+export PUBLIC_PATH='/'
 echo "🔙 restore path"
 
 echo "🚀 Begin deployment"

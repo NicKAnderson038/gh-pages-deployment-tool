@@ -26,6 +26,16 @@ sudo apt-get install jq
 
 #
 
+(If using Vue/cli)
+The public path needs to be changed during the build procss. Add the example below to the `vue.config.js` file.
+
+example:
+```js
+module.exports = {
+  publicPath: process.env.PUBLIC_PATH || '/',
+}
+```
+
 2. Create shell script file at the root of your application: `gh-pages.sh`
 
 3. Copy/paste code into .sh file. Then run `bash gh-pages.sh` from the application root.
